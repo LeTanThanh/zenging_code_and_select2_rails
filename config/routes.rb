@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "bank_accounts#new"
+  resources :bank_accounts do
+    collection do
+      post :render_branch_code_select_tag
+    end
+  end
 end

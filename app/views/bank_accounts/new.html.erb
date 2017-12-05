@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>ZenginCode Form</h2>
+  <p>The form below uses select2-rails for auto complete select</p>
+  <form>
+    <div class="form-group">
+      <label for="usr">Bank name: </label>
+      <%= select_tag "bank_code", options_for_select(bank_code_options), class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label for="usr">Branch name: </label>
+      <%= select_tag "branch_code", options_for_select({}), class: "form-control" %>
+    </div>
+  </form>
+</div>
+
+<%= content_for :specific_page_js do %>
+  <script>
+    <%= render "bank_accounts_new.js" %>
+  </script>
+<% end %>

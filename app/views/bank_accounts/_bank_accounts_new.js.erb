@@ -1,0 +1,24 @@
+$(document).on('ready', function() {
+  $('#bank_code').select2();
+
+  renderBranchCodeSelectTagBankAccounts();
+
+  $('#bank_code').on('change', function() {
+    renderBranchCodeSelectTagBankAccounts();
+  });
+});
+
+function renderBranchCodeSelectTagBankAccounts() {
+  $.ajax({
+    url: '<%= render_branch_code_select_tag_bank_accounts_path %>',
+    type: 'post',
+    dataType: 'json',
+    data: {
+      bank_code: $('#bank_code').val()
+    },
+    success: function(response) {
+      $('#branch_code').empty().append(response.branch_code_options);
+      $('#branch_code').select2();
+    }
+  });
+}

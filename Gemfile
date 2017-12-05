@@ -29,3 +29,10 @@ group :development do
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "mysql2"
+gem "pry-rails"
+gem "jquery-rails"
+gem "bootstrap-sass"
+gem "zengin_code"
+gem "select2-rails"
